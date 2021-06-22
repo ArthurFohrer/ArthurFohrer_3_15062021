@@ -31,7 +31,7 @@
     text-align: center;
     background-color: rgb(250, 250, 250);
   
-    &__title {
+    &__title{
       margin: 0;
       font-size: 30px;
       margin-bottom: 1rem;
@@ -41,6 +41,18 @@
       font-weight: 300;
       margin: 1.5rem 0;
     }
+
+    &__button{
+      margin-top: 20px;
+      border: 0;
+      line-height: 2.5;
+      padding: 5px 20px;
+      font-size: 1rem;
+      text-align: center;
+      color: #fff;
+      border-radius: 30px;
+      background: linear-gradient(to bottom, #D275D5 0%, #975DD5 100%);
+    }
 }
 
 .container{
@@ -49,19 +61,24 @@
     position: relative;
 }
 
-.working {
+.working{
   padding: 3rem;
 
-  &__title {
+  &__title{
     margin-top: 0;
   }
 
-  &__list {
+  &__list{
     margin: 0;
     padding: 0;
     list-style: none;
     display: flex;
     flex-direction: row;
+
+	@media(max-width: 800px){
+		display: flex;
+		flex-direction: column;
+	}
   }
 
   &__tuto {
@@ -70,10 +87,11 @@
     box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
     border-radius: 1.25rem;
     background-color: #f6f6f6;
-    display: flex;
     position: relative;
-    height: 1.5rem;
-    width: 30rem;
+
+	@media(min-width: 800.1px){
+		width: 33%;
+	}
   }
 
   &__icon {
@@ -83,57 +101,62 @@
 }
 
 .restaurant{
-    background-color: #7e7e7e;
+    background-color: #f6f6f6;
     padding-bottom: 30px;
     
     a{
       color: black;
       text-decoration: none;
-    }
-    .restaurant_card {
-      background-color : white;
-      border-radius: 15px;
-      box-shadow: 0px 26px 58px -22px rgba(0,0,0,0.48);
-      margin: 10px;
-      overflow: hidden;
-      position: relative;
+	}
 
-      img {
-        height: 150px;
-        object-fit: cover;
-        width: 100%;
-      }
+	&__title{
+		padding-top: 40px;
+	}
 
-      &__content {
-        align-items: center;
-        display: flex;
-        flex-wrap: wrap;
-        padding: 5px;
-      }
+	&__card{
+		background-color : white;
+		border-radius: 15px;
+		box-shadow: 0px 26px 58px -22px rgba(0,0,0,0.48);
+		margin: 10px;
+		overflow: hidden;
+		position: relative;
+	
+		img {
+		  height: 150px;
+		  object-fit: cover;
+		  width: 100%;
+		}
+	
+		&__content {
+		  align-items: center;
+		  display: flex;
+		  flex-wrap: wrap;
+		  padding: 5px;
+		}
+	
+		&__description {
+		  flex: 1;
+		  margin: 5px 0px 5px 20px;
+		  width: 150px;
+	
+		  h4 {
+			margin: 0;
+		  }
+		}
+	
+		&__name {
+		  font-weight: bold;
+		}
+	}
+}
 
-      &__description {
-        flex: 1;
-        margin: 5px 0px 5px 10px;
-        width: 150px;
-
-        h4 {
-          margin:0;
-        }
-      }
-
-      &__name{
-        font-weight: bold;
-      }
-    }
-  }
-
-.restaurant_cards{
+.restaurant__cards{
   display: grid;
   grid-template-columns: repeat(1, 1fr);
 }
 
 @media (min-width: 1000px){
-  .restaurant_cards{
+  .restaurant__cards{
       grid-template-columns: repeat(2, 1fr);
   }
 }

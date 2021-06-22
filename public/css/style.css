@@ -37,6 +37,17 @@
   font-weight: 300;
   margin: 1.5rem 0;
 }
+.discover__button {
+  margin-top: 20px;
+  border: 0;
+  line-height: 2.5;
+  padding: 5px 20px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  border-radius: 30px;
+  background: linear-gradient(to bottom, #D275D5 0%, #975DD5 100%);
+}
 
 .container {
   max-width: 1280px;
@@ -57,16 +68,24 @@
   display: flex;
   flex-direction: row;
 }
+@media (max-width: 800px) {
+  .working__list {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .working__tuto {
   padding: 1.5rem;
   margin: 1rem 0 1rem 0.75rem;
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
   border-radius: 1.25rem;
   background-color: #f6f6f6;
-  display: flex;
   position: relative;
-  height: 1.5rem;
-  width: 30rem;
+}
+@media (min-width: 800.1px) {
+  .working__tuto {
+    width: 33%;
+  }
 }
 .working__icon {
   margin-right: 1rem;
@@ -74,14 +93,17 @@
 }
 
 .restaurant {
-  background-color: #7e7e7e;
+  background-color: #f6f6f6;
   padding-bottom: 30px;
 }
 .restaurant a {
   color: black;
   text-decoration: none;
 }
-.restaurant .restaurant_card {
+.restaurant__title {
+  padding-top: 40px;
+}
+.restaurant__card {
   background-color: white;
   border-radius: 15px;
   box-shadow: 0px 26px 58px -22px rgba(0, 0, 0, 0.48);
@@ -89,36 +111,36 @@
   overflow: hidden;
   position: relative;
 }
-.restaurant .restaurant_card img {
+.restaurant__card img {
   height: 150px;
   object-fit: cover;
   width: 100%;
 }
-.restaurant .restaurant_card__content {
+.restaurant__card__content {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   padding: 5px;
 }
-.restaurant .restaurant_card__description {
+.restaurant__card__description {
   flex: 1;
-  margin: 5px 0px 5px 10px;
+  margin: 5px 0px 5px 20px;
   width: 150px;
 }
-.restaurant .restaurant_card__description h4 {
+.restaurant__card__description h4 {
   margin: 0;
 }
-.restaurant .restaurant_card__name {
+.restaurant__card__name {
   font-weight: bold;
 }
 
-.restaurant_cards {
+.restaurant__cards {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
 }
 
 @media (min-width: 1000px) {
-  .restaurant_cards {
+  .restaurant__cards {
     grid-template-columns: repeat(2, 1fr);
   }
 }
