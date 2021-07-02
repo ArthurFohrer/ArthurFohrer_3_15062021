@@ -1,3 +1,53 @@
+.lds-dual-ring{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+
+.lds-dual-ring:after{
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #9356DC;
+  border-color: #9356DC transparent #9356DC transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring{
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.80);
+  animation: loader 0.01s;
+  animation-delay: 2s;
+  z-index: 20000;
+  animation-fill-mode: both;
+}
+
+@keyframes loader {
+  100% {
+    opacity: 0;
+    z-index: -10;
+  }
+} 
+
 .banner{
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
     position: relative;
@@ -89,9 +139,13 @@
     background-color: #f6f6f6;
     position: relative;
 
-	@media(min-width: 800.1px){
-		width: 33%;
-	}
+	  @media(min-width: 800.1px){
+		  width: 33%;
+	  }
+  }
+
+  &__tuto:hover{
+    background-color: #F4EDFE;
   }
 
   &__dot{
@@ -112,6 +166,10 @@
   &__icon {
     margin-right: 1rem;
     color: #7e7e7e;
+  }
+
+  &__icon:hover{
+    color: #8B59D5;
   }
 }
 
@@ -166,9 +224,12 @@
 }
 
 .square{
-	width: auto;
-  	height: auto;
   	background: #99E2D0;
+    position: absolute;
+    color: #3B8568;
+    top: 1rem;
+    right: 0.75rem;
+    padding: 0.35rem;
 }
 
 .restaurant__cards{
@@ -197,6 +258,7 @@
       margin: 0;
       font-size: 1.2rem;
       margin-bottom: 1rem;
+      text-decoration: none;
     }
   
     &__list {
@@ -219,3 +281,4 @@
         margin-right: 0.5rem;
       }
 }
+
